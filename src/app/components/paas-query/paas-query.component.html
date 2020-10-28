@@ -1,0 +1,19 @@
+<form class="ui form" type="input">
+    <div class="field">
+        <label>Search for perspectives</label>
+        <input 
+            class="input-box"
+            type="text" 
+            [(ngModel)]="paasQuery"
+            name="paasQuery"
+            [ngModelOptions]="{standalone: true}"
+            placeholder="Enter your query here..."
+            >
+    </div>
+    <button class="ui button" type="submit" (click)="onSubmit()">Submit</button>
+    <button class="ui negative basic button" type="button" (click)="onClear()">Clear</button>
+</form>
+<br>
+<app-paas-results></app-paas-results>
+
+

@@ -1,0 +1,34 @@
+<div class="ui placeholder segment">
+    <div class="ui two column very relaxed stackable grid">
+        <div class="column">
+            <div class="ui form">
+                <h3>Please enter your credentials:</h3>
+                <div class="field">
+                    <label>Email</label>
+                    <div class="ui left icon input">
+                        <input [(ngModel)]="email" type="text" placeholder="Email" required>
+                        <i class="user icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <div class="ui left icon input">
+                        <input [(ngModel)]="password" type="password" placeholder="Password" required>
+                        <i class="lock icon"></i>
+                    </div>
+                </div>
+                <div class="ui submit button" (click)="onSubmit()">Login</div>   
+            </div> 
+        </div>
+        <div class="middle aligned column">
+            <div class="ui big blue button" [routerLink]="['/signup']">
+                <i class="signup icon"></i>
+                Sign Up
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical divider">
+        Or
+    </div>
+
+</div>

@@ -1,0 +1,14 @@
+<div>
+    <h3><a [routerLink]="['/profile']">Profile </a>// Plans & Subscriptions</h3>
+</div>
+<h4 *ngIf="username">For: {{ username }}</h4>
+<div>
+    {{ (userDoc | async)?.shortBio }}
+</div>
+<br>
+<div class="ui button">
+    <a href="javascript:void(0)" data-billsby-type="checkout">Subscribe</a>
+</div>
+<div class="ui button">
+    <a href="javascript:void(0)" data-billsby-type="account">Manage account</a>
+</div>

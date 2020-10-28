@@ -1,0 +1,21 @@
+<div>
+    <h3>Profile</h3>
+</div>
+<br>
+<form class="ui form">
+    <div class="field">
+        <label>Username</label>
+        <input type="text" name="username" placeholder={{this.username}} [(ngModel)]="username">
+    </div>
+    <div class="field">
+        <label>Email</label>
+        <input type="text" name="last-name" placeholder={{this.email}}>
+    </div>
+    <div class="field">
+        <label>Password</label>
+        <input type="text" name="Password" placeholder="*****">
+    </div>
+    <div class="ui submit button" (click)="onSubmit()">Update</div>
+</form>
+<hr>
+<div class="ui button blue" [routerLink]="['/plans']">Plans & Subscriptions</div>

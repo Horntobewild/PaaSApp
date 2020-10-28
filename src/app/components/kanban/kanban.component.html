@@ -1,0 +1,29 @@
+<div class="ui five column doubling stackable grid container">
+    <div class="column" id="card-column">
+      <h3>To Do</h3>
+        <div cdkDropList
+            #todoList="cdkDropList"
+            (cdkDropListDropped)="drop($event)"
+            [cdkDropListData]="todos"
+            [cdkDropListConnectedTo]="completedList">
+            <div cdkDrag *ngFor="let todo of todos" class="task-card">
+                <h4>{{ todo.name }}</h4>
+                <p>{{ todo.category }}</p>  
+            </div>
+        </div>
+    </div>
+
+    <div class="column" id="card-column">
+      <h3>Done</h3>
+        <div cdkDropList
+            #completedList="cdkDropList"
+            (cdkDropListDropped)="drop($event)"
+            [cdkDropListData]="completed"
+            [cdkDropListConnectedTo]="todoList">
+            <div cdkDrag *ngFor="let complete of completed" class="task-card">
+                <h4>{{ complete.name }}</h4>
+                <p>{{ complete.category }}</p>  
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<h4>Perspectives:</h4>
+
+<div *ngIf="perspectives === 'keine'">
+    <p >No results...</p>
+    <div class="ui placeholder">
+        <div class="full line"></div>
+        <div class="very long line"></div>
+        <div class="long line"></div>
+        <div class="medium line"></div>
+        <div class="short line"></div>
+        <div class="very short line"></div>
+      </div>
+</div>
+<div *ngIf="perspectives != 'keine'">
+    <ng-container *ngFor="let item of perspectives | keyvalue">
+        <div class="ui raised padded text container segment">
+            <h3>
+            <a href="{{ item.value.pageUrl }}" target="_blank">{{ item.value.title }} </a>
+            </h3>
+            <p id="persPara">{{ item.value.fullText }}</p>
+            <div style="display: inline-block;" *ngFor="let ent of item.value.entities | keyvalue ; let i=index">
+                <p 
+                    *ngIf="i<=4"
+                    [className]="ent.value.sentiment >= 0 ? 'entPos' : 'entNeg'" 
+                    >{{ ent.value.entity | titlecase}}
+                </p>
+                <span></span>
+            </div>
+        </div>
+    </ng-container>
+</div>
