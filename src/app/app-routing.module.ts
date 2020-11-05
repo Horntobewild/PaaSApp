@@ -9,6 +9,7 @@ import { KanbanComponent } from './components/kanban/kanban.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PlansComponent } from './components/plans/plans.component';
+import { ParserComponent } from './components/parser/parser.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: "tasks", component: KanbanComponent}, 
   { path: "signup", component: SignupComponent}, 
   { path: "profile", component: ProfileComponent}, 
-  { path: "plans", component: PlansComponent}
+  { path: "plans", component: PlansComponent}, 
+  { path: "parser", component: ParserComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

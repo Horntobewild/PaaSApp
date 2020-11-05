@@ -2,7 +2,7 @@
     <div class="item" routerLink="/">
         <img class="ui middle aligned tiny image" src="../../../assets/images/brand/Wortmarke v2 export.svg" alt="Varia Logo">
     </div>
-    <a class="header item" routerLink="/paas" >
+    <a class="item" routerLink="/paas" >
         PaaS
     </a>
     <div class="item">
@@ -11,10 +11,13 @@
     <div class="item">
         <a routerLink="/about">About</a>
     </div>
+    <div class="item">
+        <a routerLink="/parser">Parser</a>
+    </div>
     <div *ngIf="!isLoggedIn" class="right item">
         <a routerLink="/login">Login</a>
     </div>
-    <div *ngIf="isLoggedIn" class="item">
+    <div *ngIf="isLoggedIn" class="right item">
         <a routerLink="/profile">{{ this.username }}</a>
     </div>
     <div *ngIf="isLoggedIn" class="right item">

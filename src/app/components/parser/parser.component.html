@@ -1,0 +1,22 @@
+<form class="ui form">
+    <div class="field">
+        <label>Enter Target URL</label>
+        <input
+            type="text"
+            [(ngModel)]="targetUrl"
+            name="targetUrl"
+            placeholder="Enter your target url here..."
+            >
+    </div>
+    <button class="ui button" type="submit" (click)="onSubmit()">Submit</button>
+    <button class="ui negative basic button" type="button" (click)="onClear()">Clear</button>
+</form>
+<br>
+<div *ngIf="parsedContent === 'no content parsed yet' || parsedContent === 'no results'">
+    <p >{{ parsedContent }}</p>
+</div>
+
+<div *ngIf="parsedContent.title" class="ui raised very padded text container segment">
+    <h3 class="ui header"><a href="{{parsedContent.pageUrl}}" target="_blank">{{ parsedContent.title }}</a></h3>
+    <p>{{ parsedContent.text }}</p>
+</div>

@@ -24,6 +24,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PlansComponent } from './components/plans/plans.component';
+import { ParserComponent } from './components/parser/parser.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { PlansComponent } from './components/plans/plans.component';
     KanbanComponent,
     SignupComponent,
     ProfileComponent,
-    PlansComponent,    
+    PlansComponent,
+    ParserComponent,    
   ],
   imports: [
     BrowserModule,
