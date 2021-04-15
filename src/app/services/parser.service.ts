@@ -23,12 +23,31 @@ export class ParserService {
 
   ) { }
 
-  
-  parseARticle(url:string){
-    const params = new HttpParams({ fromObject: { token: this.diffbotToken, url}});
-    this.http.get(this.getAdress, {params});
+
+  parseArticle(url:string){
+    const params = new HttpParams({ fromObject: { token: this.diffbotToken, url: url}});
+    this.http.get(this.getAdress, {params}).subscribe(
+      arg => this.parserSubject.next(arg['objects'][0])
+    );
   }
 
+  // parseArticle(url:string){
+  //   const params = new HttpParams()
+  //     .set('token', this.diffbotToken)
+  //     .set('url', url)
+  //   const getRequest = `${this.getAdress}?${params.toString}`;
+  //   console.log('querey received to: ', getRequest)
+  //   this.http.get(getRequest).subscribe(
+  //     arg => console.log(arg)
+  //   )
+  // }
+
+  // parseArticle(url:string){
+    
+  //   this.http.get((this.getAdress+"?token="+this.diffbotToken+"?url="+url).toString()).subscribe(
+  //     arg => console.log(arg)
+  //   )
+  // }
 
   clearResults(){
     this.parserSubject.next('no results')
