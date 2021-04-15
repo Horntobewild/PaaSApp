@@ -38,9 +38,13 @@ export class SignupComponent implements OnInit {
         this.flashMessage.show(err.message, {
           cssClass: 'alert-danger', timeout: 4000
         });
-      });
-    
-    
+      });    
+  }
+
+  onDisabled(){
+    this.flashMessage.show('Signup is currently disabled!', {
+      cssClass: 'alert-danger', timeout: 4000
+    })
   }
 
 }
